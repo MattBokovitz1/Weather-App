@@ -45,11 +45,9 @@ const WeatherTable = (props) => {
             {data.list[0].weather[0].description}
           </WeatherDescription>
 
+          <WeatherInfo>Temperature: {data.list[0].main.temp} F</WeatherInfo>
           <WeatherInfo>
-            Temperature: {data.list[0].main.temp} degrees Fahrenheit
-          </WeatherInfo>
-          <WeatherInfo>
-            Feels like: {data.list[0].main.feels_like} degrees Fahrenheit
+            Feels like: {data.list[0].main.feels_like} F
           </WeatherInfo>
           <WeatherInfo>Wind: {data.list[0].wind.speed} mph</WeatherInfo>
         </WeatherCard>
