@@ -12,10 +12,15 @@ const SearchWrapper = styled.div`
   align-items: center;
   height: 10%;
 `;
+const SearchInstructions = styled.h3`
+  margin: auto;
+  padding: 5%;
+`;
 
 export default function Search() {
   const [city, setCity] = useState("");
   const [data, setData] = useState(null);
+  const [notFound, setNotFound] = useState(false);
   const API_KEY = process.env.REACT_APP_API_KEY;
 
   const onSearch = () => {
@@ -23,7 +28,15 @@ export default function Search() {
       `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=imperial`
     )
       .then((response) => response.json())
-      .then((data) => setData(data))
+
+      .then((request) => {
+        if (request.cod !== "404") {
+          setNotFound(false);
+          setData(request);
+        } else {
+          setNotFound(true);
+        }
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -50,7 +63,11 @@ export default function Search() {
       >
         Search Weather
       </Button>
-      <WeatherTable data={data} />
+      {notFound ? (
+        <SearchInstructions>Please search a valid city</SearchInstructions>
+      ) : (
+        <WeatherTable data={data} />
+      )}
     </SearchWrapper>
   );
 }
