@@ -1,20 +1,22 @@
+import React from "react";
 import styled from "styled-components";
 import Landing from "./components/Landing";
+import Search from "./components/Search";
+import "./App.css";
 
 const WrapperDiv = styled.div`
   margin: auto;
-  padding: 10%;
+  font-size: 1rem;
   max-width: 100%;
   text-align: center;
-  background-color: #fbfbfb;
+  background-color: white;
 `;
 
-function App() {
+export default function App() {
   return (
     <WrapperDiv>
       <Landing />
+      <Search />
     </WrapperDiv>
   );
 }
-
-export default App;
