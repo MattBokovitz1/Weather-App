@@ -5,7 +5,7 @@ const WeatherCard = styled.div`
   width: 40%;
   margin: 3% auto;
   padding: 3%;
-  background: darkblue;
+  background: #a8a8ff;
 `;
 const SearchInstructions = styled.h3`
   margin: auto;
@@ -15,10 +15,12 @@ const DescriptionIcon = styled.img`
   width: 30%;
 `;
 const WeatherInfo = styled.p`
-  color: #ffffff;
+  color: #fcffdb;
+  font-size: 1.2rem;
 `;
 const CityName = styled.h2`
-  color: #ffffff;
+  color: #fcffdb;
+  font-size: 1.5rem;
 `;
 
 const WeatherTable = (props) => {
