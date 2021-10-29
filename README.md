@@ -1,5 +1,5 @@
 # Weather-App
-React application that allows user to search and display weather forecast.
+React application that allows user to search for city and display weather forecast.
 
 To run app:
 1. git clone this repo
