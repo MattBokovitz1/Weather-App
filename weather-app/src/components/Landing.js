@@ -15,10 +15,15 @@ const Sunny = styled.img`
   width: 60%;
 `;
 
+const Title = styled.h1`
+  font-size: 2rem;
+  color: navy;
+`;
+
 function Landing() {
   return (
     <LandingWrapper>
-      <h1>The Weather of the World </h1>
+      <Title>The Weather of the World </Title>
       <div>
         <Sunny src={sunny} alt="weather icon" />
       </div>

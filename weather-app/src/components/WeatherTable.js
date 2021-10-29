@@ -17,6 +17,12 @@ const DescriptionIcon = styled.img`
 const WeatherInfo = styled.p`
   color: #fcffdb;
   font-size: 1.2rem;
+  padding: 1%;
+`;
+const WeatherDescription = styled.h3`
+  color: #fcffdb;
+  font-size: 1.2rem;
+  padding: 0 0 5% 0;
 `;
 const CityName = styled.h2`
   color: #fcffdb;
@@ -35,7 +41,9 @@ const WeatherTable = (props) => {
             src={`http://openweathermap.org/img/w/${data?.list[0].weather[0].icon}.png`}
             alt="weather icon"
           />
-          <WeatherInfo>{data.list[0].weather[0].description}</WeatherInfo>
+          <WeatherDescription>
+            {data.list[0].weather[0].description}
+          </WeatherDescription>
 
           <WeatherInfo>
             Temperature: {data.list[0].main.temp} degrees Fahrenheit
