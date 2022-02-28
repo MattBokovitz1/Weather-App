@@ -5,7 +5,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import WeatherTable from "./WeatherTable";
 
 const SearchWrapper = styled.div`
-  padding: 3%;
+  padding: 2%;
   font-family: "Roboto", sans-serif;
   color: navy;
   justify-content: center;

@@ -4,7 +4,7 @@ import DayDetails from "./DayDetails";
 
 const DayDivs = styled.div`
   width: 100%;
-  margin: 4% auto;
+  margin: 2% auto;
   padding: 1% 0;
 
   display: flex;
@@ -14,7 +14,7 @@ const DayDivs = styled.div`
 const UpcomingWeather = (props) => {
   const { data } = props;
   const dailyData = data.list.filter((info) =>
-    info.dt_txt.includes("18:00:00")
+    info.dt_txt.includes("21:00:00")
   );
   return (
     <DayDivs>

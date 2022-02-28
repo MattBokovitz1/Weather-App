@@ -6,7 +6,6 @@ const DayDiv = styled.div`
   margin: auto 0;
   padding: 2% 1%;
   margin: 1%;
-  border: 1px solid black;
   background: #a8a8ff;
   display: flex;
   flex-direction: column;
@@ -19,9 +18,15 @@ const DescriptionIcon = styled.img`
 `;
 
 const DayInfo = styled.p`
-  color: white;
+  color: #fcffdb;
   font-size: 1.2rem;
   margin: 1% 0;
+`;
+
+const DayTitle = styled.h2`
+  color: #fcffdb;
+  margin: 0 0 2% 0;
+  font-size: 1.5rem;
 `;
 
 const DayDetails = ({ day }) => {
@@ -33,7 +38,7 @@ const DayDetails = ({ day }) => {
 
   return (
     <DayDiv>
-      <DayInfo>{moment(newDate).format("dddd")}</DayInfo>
+      <DayTitle>{moment(newDate).format("dddd")}</DayTitle>
       <DayInfo>{moment(newDate).format("MMMM Do, h:mm a")}</DayInfo>
       <DayInfo>{Math.round(day.main.temp)} °F</DayInfo>
       <DayInfo>{day.weather[0].main}</DayInfo>
