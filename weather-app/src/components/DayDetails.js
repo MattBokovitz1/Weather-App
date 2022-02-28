@@ -35,7 +35,7 @@ const DayDetails = ({ day }) => {
   const weekday = day.dt * 1000;
   newDate.setTime(weekday);
 
-  moment(newDate).format("dddd");
+  moment(newDate).format("");
 
   return (
     <DayDiv>
