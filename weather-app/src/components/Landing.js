@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import sunny from "../media/sunnyimage.png";
 
 const LandingWrapper = styled.div`
   display: flex;
@@ -8,11 +7,8 @@ const LandingWrapper = styled.div`
   color: navy;
   justify-content: center;
   align-items: center;
-  height: 5%;
-`;
-
-const Sunny = styled.img`
-  width: 60%;
+  padding: 3% 0;
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 `;
 
 const Title = styled.h1`
@@ -24,9 +20,6 @@ function Landing() {
   return (
     <LandingWrapper>
       <Title>The Weather of the World </Title>
-      <div>
-        <Sunny src={sunny} alt="weather icon" />
-      </div>
     </LandingWrapper>
   );
 }

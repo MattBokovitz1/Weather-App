@@ -9,7 +9,7 @@ const WrapperDiv = styled.div`
   font-size: 1rem;
   max-width: 100%;
   text-align: center;
-  background-color: white;
+  background-color: #a8ffff;
 `;
 
 export default function App() {

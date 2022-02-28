@@ -33,6 +33,7 @@ export default function Search() {
         if (request.cod !== "404") {
           setNotFound(false);
           setData(request);
+          console.log(data);
         } else {
           setNotFound(true);
         }
@@ -46,11 +47,16 @@ export default function Search() {
       onSearch();
     }
   };
+
+  const change = (event) => {
+    setCity(event.target.value);
+  };
+
   return (
     <SearchWrapper>
       <Input
         placeholder="Enter City"
-        onChange={(event) => setCity(event.target.value)}
+        onChange={change}
         value={city}
         onKeyDown={onKeyDown}
         style={{ width: 200 }}
