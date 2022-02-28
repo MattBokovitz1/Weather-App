@@ -12,17 +12,17 @@ const DescriptionIcon = styled.img`
 `;
 const WeatherInfo = styled.p`
   color: #fcffdb;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 1%;
 `;
 const WeatherDescription = styled.h3`
   color: #fcffdb;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 0 0 5% 0;
 `;
 const CityName = styled.h2`
   color: #fcffdb;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 `;
 
 const CurrentWeather = (props) => {
