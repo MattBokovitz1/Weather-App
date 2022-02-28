@@ -7,7 +7,7 @@ const LandingWrapper = styled.div`
   color: navy;
   justify-content: center;
   align-items: center;
-  padding: 3% 0;
+  padding: 2% 0;
   background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 `;
 

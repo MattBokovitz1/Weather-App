@@ -5,8 +5,8 @@ import UpcomingWeather from "./UpcomingWeather";
 
 const WeatherCard = styled.div`
   width: 100%;
-  margin: 3% auto;
-  padding: 3%;
+  margin: 1% auto;
+  padding: 1%;
 `;
 const SearchInstructions = styled.h3`
   margin: auto;

@@ -3,10 +3,9 @@ import styled from "styled-components";
 
 const WeatherCard = styled.div`
   width: 40%;
-  margin: 1% auto;
+  margin: 0% auto;
   padding: 2%;
   background: #a8a8ff;
-  border: 1px solid black;
 `;
 const DescriptionIcon = styled.img`
   width: 30%;
