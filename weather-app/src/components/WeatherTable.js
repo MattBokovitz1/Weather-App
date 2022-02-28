@@ -4,14 +4,14 @@ import CurrentWeather from "./CurrentWeather";
 import UpcomingWeather from "./UpcomingWeather";
 
 const WeatherCard = styled.div`
-  width: 40%;
+  width: 100%;
   margin: 3% auto;
   padding: 3%;
-  background: #a8a8ff;
 `;
 const SearchInstructions = styled.h3`
   margin: auto;
   padding: 5%;
+  font-size: 1.3rem;
 `;
 
 const WeatherTable = (props) => {

@@ -3,10 +3,12 @@ import styled from "styled-components";
 import DayDetails from "./DayDetails";
 
 const DayDivs = styled.div`
-  width: 40%;
-  margin: 3% auto;
-  padding: 3%;
-  background: #a8a8ff;
+  width: 100%;
+  margin: 4% auto;
+  padding: 1% 0;
+
+  display: flex;
+  justify-content: space-between;
 `;
 
 const UpcomingWeather = (props) => {
