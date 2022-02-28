@@ -4,12 +4,8 @@ import styled from "styled-components";
 const WeatherCard = styled.div`
   width: 40%;
   margin: 3% auto;
-  padding: 3%;
+  padding: 1%;
   background: #a8a8ff;
-`;
-const SearchInstructions = styled.h3`
-  margin: auto;
-  padding: 5%;
 `;
 const DescriptionIcon = styled.img`
   width: 30%;

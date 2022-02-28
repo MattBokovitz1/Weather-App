@@ -10,6 +10,10 @@ const DayDiv = styled.div`
   justify-content: space-evenly;
 `;
 
+const DescriptionIcon = styled.img`
+  width: 30%;
+`;
+
 const DayInfo = styled.p`
   color: #626462;
   font-size: 1.2rem;
@@ -27,6 +31,10 @@ const DayDetails = ({ day }) => {
       <DayInfo>{moment(newDate).format("dddd")}</DayInfo>
       <DayInfo>{moment(newDate).format("MMMM Do, h:mm a")}</DayInfo>
       <DayInfo>{day.main.temp}</DayInfo>
+      <DescriptionIcon
+        src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
+        alt="weather icon"
+      />
     </DayDiv>
   );
 };
