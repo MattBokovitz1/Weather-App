@@ -33,7 +33,6 @@ export default function Search() {
         if (request.cod !== "404") {
           setNotFound(false);
           setData(request);
-          console.log(data);
         } else {
           setNotFound(true);
         }
