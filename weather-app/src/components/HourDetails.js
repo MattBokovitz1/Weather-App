@@ -8,6 +8,7 @@ const HourDiv = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   height: 100%;
+  width: 100px;
 `;
 
 const HourInfo = styled.p`
@@ -16,7 +17,8 @@ const HourInfo = styled.p`
   color: #fcffdb;
 `;
 const DescriptionIcon = styled.img`
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 `;
 
 const HourDetails = ({ hour }) => {
