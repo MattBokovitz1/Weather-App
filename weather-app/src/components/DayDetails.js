@@ -4,7 +4,8 @@ const moment = require("moment");
 
 const DayDiv = styled.div`
   margin: auto 0;
-  padding: 2% 1%;
+  padding: 2% 3%;
+  width: 300px;
   margin: 1%;
   background: #a8a8ff;
   display: flex;
@@ -39,9 +40,9 @@ const DayDetails = ({ day }) => {
   return (
     <DayDiv>
       <DayTitle>{moment(newDate).format("dddd")}</DayTitle>
-      <DayInfo>{moment(newDate).format("MMMM Do, h:mm a")}</DayInfo>
+      <DayInfo>{moment(newDate).format("MMMM Do")}</DayInfo>
       <DayInfo>{Math.round(day.main.temp)} °F</DayInfo>
-      <DayInfo>{day.weather[0].main}</DayInfo>
+      <DayInfo>{day.weather[0].description}</DayInfo>
       <DescriptionIcon
         src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
         alt="weather icon"
