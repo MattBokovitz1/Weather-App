@@ -19,7 +19,7 @@ const UpcomingWeather = (props) => {
   return (
     <DayDivs>
       {dailyData.map((day) => {
-        return <DayDetails key={day.id} day={day} />;
+        return <DayDetails key={day.dt} day={day} />;
       })}
     </DayDivs>
   );
