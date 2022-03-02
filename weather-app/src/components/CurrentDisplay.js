@@ -6,12 +6,12 @@ const DescriptionIcon = styled.img`
 `;
 const WeatherInfo = styled.p`
   color: #fcffdb;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding: 1%;
 `;
 const WeatherDescription = styled.h3`
   color: #fcffdb;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding: 0 0 5% 0;
 `;
 const CityName = styled.h2`
@@ -19,7 +19,7 @@ const CityName = styled.h2`
   font-size: 1.7rem;
 `;
 const DisplayDiv = styled.div`
-  width: 40%;
+  width: 60%;
 `;
 
 const CurrentDisplay = (props) => {

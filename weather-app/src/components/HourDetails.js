@@ -1,19 +1,14 @@
+import { Card } from "antd";
 import React from "react";
 import styled from "styled-components";
-const moment = require("moment");
+import { Typography } from "antd";
 
-const HourDiv = styled.div`
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
-  width: 100px;
-`;
+const { Title } = Typography;
+const moment = require("moment");
 
 const HourInfo = styled.p`
   color: #626462;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #fcffdb;
 `;
 const DescriptionIcon = styled.img`
@@ -27,14 +22,17 @@ const HourDetails = ({ hour }) => {
   newDate.setTime(weekday);
   moment(newDate).format("dddd");
   return (
-    <HourDiv>
+    <Card bordered={false} style={{ width: 140, backgroundColor: "#a8a8ff" }}>
+      <Title level={5} style={{ color: "#fcffdb" }}>
+        {moment(newDate).format("h:mm a")}
+      </Title>
+
       <DescriptionIcon
         src={`http://openweathermap.org/img/w/${hour.weather[0].icon}.png`}
         alt="weather icon"
       />
       <HourInfo>{Math.round(hour.main.temp)} °F</HourInfo>
-      <HourInfo>{moment(newDate).format("h:mm a")}</HourInfo>
-    </HourDiv>
+    </Card>
   );
 };
 

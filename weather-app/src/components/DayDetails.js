@@ -1,17 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-const moment = require("moment");
+import { Card, Typography } from "antd";
 
-const DayDiv = styled.div`
-  margin: auto 0;
-  padding: 2% 3%;
-  width: 300px;
-  margin: 1%;
-  background: #a8a8ff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const { Title } = Typography;
+const moment = require("moment");
 
 const DescriptionIcon = styled.img`
   align-items: center;
@@ -20,14 +12,8 @@ const DescriptionIcon = styled.img`
 
 const DayInfo = styled.p`
   color: #fcffdb;
-  font-size: 1.2rem;
-  margin: 1% 0;
-`;
-
-const DayTitle = styled.h2`
-  color: #fcffdb;
-  margin: 0 0 2% 0;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  margin: 0.5% 0;
 `;
 
 const DayDetails = ({ day }) => {
@@ -38,8 +24,10 @@ const DayDetails = ({ day }) => {
   moment(newDate).format("");
 
   return (
-    <DayDiv>
-      <DayTitle>{moment(newDate).format("dddd")}</DayTitle>
+    <Card bordered={false} style={{ width: 200, backgroundColor: "#a8a8ff" }}>
+      <Title level={4} style={{ color: "#fcffdb" }}>
+        {moment(newDate).format("dddd")}
+      </Title>
       <DayInfo>{moment(newDate).format("MMMM Do")}</DayInfo>
       <DayInfo>{Math.round(day.main.temp)} °F</DayInfo>
       <DayInfo>{day.weather[0].description}</DayInfo>
@@ -47,7 +35,7 @@ const DayDetails = ({ day }) => {
         src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
         alt="weather icon"
       />
-    </DayDiv>
+    </Card>
   );
 };
 
