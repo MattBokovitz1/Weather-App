@@ -1,17 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { Card } from "antd";
+
 const moment = require("moment");
 
-const DayDiv = styled.div`
-  margin: auto 0;
-  padding: 2% 3%;
-  width: 300px;
-  margin: 1%;
-  background: #a8a8ff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+// const DayDiv = styled.div`
+//   margin: auto 0;
+//   padding: 2% 3%;
+//   width: 300px;
+//   margin: 1%;
+//   background: #a8a8ff;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// `;
 
 const DescriptionIcon = styled.img`
   align-items: center;
@@ -38,8 +40,11 @@ const DayDetails = ({ day }) => {
   moment(newDate).format("");
 
   return (
-    <DayDiv>
-      <DayTitle>{moment(newDate).format("dddd")}</DayTitle>
+    <Card
+      title={moment(newDate).format("dddd")}
+      bordered={false}
+      style={{ width: 200, backgroundColor: "#a8a8ff" }}
+    >
       <DayInfo>{moment(newDate).format("MMMM Do")}</DayInfo>
       <DayInfo>{Math.round(day.main.temp)} °F</DayInfo>
       <DayInfo>{day.weather[0].description}</DayInfo>
@@ -47,7 +52,7 @@ const DayDetails = ({ day }) => {
         src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
         alt="weather icon"
       />
-    </DayDiv>
+    </Card>
   );
 };
 

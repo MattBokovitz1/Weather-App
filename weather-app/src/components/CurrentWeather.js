@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const WeatherCard = styled.div`
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: 0% auto;
   padding: 2%;
   background: #a8a8ff;
