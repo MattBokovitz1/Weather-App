@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import CurrentWeather from "./CurrentWeather";
-import UpcomingWeather from "./UpcomingWeather";
+import CurrentWeather from "./CurrentWeather/CurrentWeather";
+import UpcomingWeather from "./DaysAheadWeather/UpcomingWeather";
 
 const WeatherCard = styled.div`
   width: 100%;
