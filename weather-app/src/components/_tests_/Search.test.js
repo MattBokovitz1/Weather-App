@@ -7,6 +7,23 @@ describe("Search Component Tests", () => {
     render(<Search />);
   });
 
+  test("Checks to make sure button is disabled, and that will not search an empty city", async () => {
+    render(<Search />);
+
+    //Arrange
+    const cityNameInput = await screen.findByPlaceholderText(/Enter City/i);
+    const submitButton = await screen.findByText(/Search Weather/i);
+
+    //Act
+    fireEvent.change(cityNameInput, {
+      target: { name: "cityName", value: "" },
+    });
+    fireEvent.click(submitButton);
+
+    //Assert
+    await screen.findByText(/Search your city for weather info/i);
+  });
+
   test("When city has not been searched, instructions are displayed to user", async () => {
     render(<Search />);
 
