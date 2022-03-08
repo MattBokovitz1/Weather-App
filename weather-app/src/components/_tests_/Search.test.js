@@ -28,7 +28,7 @@ describe("Search Component Tests", () => {
     expect(screen.getByTestId(/search-instructions/i)).toBeInTheDocument();
   });
 
-  test("When input is submitted, future hours weather info is shown.", async () => {
+  test("When valid input is submitted, future hours weather info is shown.", async () => {
     render(<Search />);
 
     //Arrange
@@ -46,7 +46,7 @@ describe("Search Component Tests", () => {
       await screen.findByTestId(/future-hours-weather-display/i)
     ).toBeInTheDocument();
   });
-  test("When input is submitted, future days weather info is shown.", async () => {
+  test("When valid input is submitted, future days weather info is shown.", async () => {
     render(<Search />);
 
     //Arrange
