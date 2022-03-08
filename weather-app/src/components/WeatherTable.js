@@ -24,7 +24,7 @@ const WeatherTable = (props) => {
           <UpcomingWeather data={data} />
         </WeatherCard>
       ) : (
-        <SearchInstructions>
+        <SearchInstructions data-testid="search-instructions">
           Search your city for weather info
         </SearchInstructions>
       )}

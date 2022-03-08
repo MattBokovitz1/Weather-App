@@ -10,16 +10,14 @@ describe("Search Component Tests", () => {
   test("When Search component is rendered, instructions are displayed to user", async () => {
     render(<Search />);
 
-    expect(
-      screen.getByText(/Search your city for weather info/i)
-    ).toBeInTheDocument();
+    expect(screen.getByTestId(/search-instructions/i)).toBeInTheDocument();
   });
 
   test("Checks to make sure button is disabled, and that will not search an empty city", async () => {
     render(<Search />);
 
     //Arrange
-    const submitButton = await screen.findByText(/Search Weather/i);
+    const submitButton = await screen.findByTestId(/weather-button/i);
 
     //Act
 
@@ -27,17 +25,15 @@ describe("Search Component Tests", () => {
 
     //Assert
 
-    expect(
-      screen.getByText(/Search your city for weather/i)
-    ).toBeInTheDocument();
+    expect(screen.getByTestId(/search-instructions/i)).toBeInTheDocument();
   });
 
   test("User can fill out and submit search input", async () => {
     render(<Search />);
 
     //Arrange
-    const cityNameInput = await screen.findByPlaceholderText(/Enter City/i);
-    const submitButton = await screen.findByText(/Search Weather/i);
+    const cityNameInput = screen.getByTestId(/search-input/i);
+    const submitButton = screen.getByTestId(/weather-button/i);
 
     //Act
     fireEvent.change(cityNameInput, {
@@ -46,15 +42,15 @@ describe("Search Component Tests", () => {
     fireEvent.click(submitButton);
 
     //Assert
-    expect(await screen.findByText(/Feels like:/i)).toBeInTheDocument();
+    expect(await screen.findByTestId(/weather-display/i)).toBeInTheDocument();
   });
 
   test("When user inputs city that is not found, error message is shown to user", async () => {
     render(<Search />);
 
     //Arrange
-    const cityNameInput = await screen.findByPlaceholderText(/Enter City/i);
-    const submitButton = await screen.findByText(/Search Weather/i);
+    const cityNameInput = screen.getByTestId(/search-input/i);
+    const submitButton = screen.getByTestId(/weather-button/i);
 
     //Act
     fireEvent.change(cityNameInput, {
@@ -63,8 +59,6 @@ describe("Search Component Tests", () => {
     fireEvent.click(submitButton);
 
     //Assert
-    expect(
-      await screen.findByText(/Please search a valid city/i)
-    ).toBeInTheDocument();
+    expect(await screen.findByTestId(/error-search/i)).toBeInTheDocument();
   });
 });

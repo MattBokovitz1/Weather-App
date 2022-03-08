@@ -18,7 +18,7 @@ const Title = styled.h1`
 
 function Landing() {
   return (
-    <LandingWrapper>
+    <LandingWrapper data-testid="header-title">
       <Title>The Weather of the World </Title>
     </LandingWrapper>
   );

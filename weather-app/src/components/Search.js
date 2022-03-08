@@ -54,6 +54,7 @@ export default function Search() {
   return (
     <SearchWrapper>
       <Input
+        data-testid="search-input"
         placeholder="Enter City"
         onChange={change}
         value={city}
@@ -61,6 +62,7 @@ export default function Search() {
         style={{ width: 200 }}
       />
       <Button
+        data-testid="weather-button"
         type="primary"
         icon={<SearchOutlined />}
         size="normal"
@@ -70,7 +72,9 @@ export default function Search() {
         Search Weather
       </Button>
       {notFound ? (
-        <SearchInstructions>Please search a valid city</SearchInstructions>
+        <SearchInstructions data-testid="error-search">
+          Please search a valid city
+        </SearchInstructions>
       ) : (
         <WeatherTable data={data} />
       )}
