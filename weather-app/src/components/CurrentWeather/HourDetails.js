@@ -1,7 +1,7 @@
-import { Card } from "antd";
 import React from "react";
 import styled from "styled-components";
-import { Typography, Paragraph } from "antd";
+import { Typography } from "antd";
+import { Card } from "antd";
 
 const { Title } = Typography;
 const moment = require("moment");

@@ -42,7 +42,7 @@ export default function Search() {
       });
   };
   const onKeyDown = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && city !== "") {
       onSearch();
     }
   };
@@ -65,6 +65,7 @@ export default function Search() {
         icon={<SearchOutlined />}
         size="normal"
         onClick={onSearch}
+        disabled={!city}
       >
         Search Weather
       </Button>

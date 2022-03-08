@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import HourDetails from "./HourDetails";
 
+// This file slices through the next
+
 const HoursDiv = styled.div`
   display: flex;
   margin: 0 auto;
