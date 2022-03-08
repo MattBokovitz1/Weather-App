@@ -26,7 +26,7 @@ const CurrentDisplay = (props) => {
   const { data } = props;
 
   return (
-    <DisplayDiv>
+    <DisplayDiv data-testid="weather-display">
       <CityName>{data.city.name}</CityName>
 
       <DescriptionIcon
