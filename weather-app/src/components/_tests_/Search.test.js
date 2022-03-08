@@ -28,7 +28,7 @@ describe("Search Component Tests", () => {
     expect(screen.getByTestId(/search-instructions/i)).toBeInTheDocument();
   });
 
-  test("User can fill out and submit search input", async () => {
+  test("When input is submitted, future hours weather info is shown.", async () => {
     render(<Search />);
 
     //Arrange
@@ -42,9 +42,28 @@ describe("Search Component Tests", () => {
     fireEvent.click(submitButton);
 
     //Assert
-    expect(await screen.findByTestId(/weather-display/i)).toBeInTheDocument();
+    expect(
+      await screen.findByTestId(/future-hours-weather-display/i)
+    ).toBeInTheDocument();
   });
+  test("When input is submitted, future days weather info is shown.", async () => {
+    render(<Search />);
 
+    //Arrange
+    const cityNameInput = screen.getByTestId(/search-input/i);
+    const submitButton = screen.getByTestId(/weather-button/i);
+
+    //Act
+    fireEvent.change(cityNameInput, {
+      target: { name: "cityName", value: "Downingtown" },
+    });
+    fireEvent.click(submitButton);
+
+    //Assert
+    expect(
+      await screen.findByTestId(/future-days-weather-display/i)
+    ).toBeInTheDocument();
+  });
   test("When user inputs city that is not found, error message is shown to user", async () => {
     render(<Search />);
 
