@@ -7,7 +7,7 @@ describe("App Component Tests", () => {
     render(<App />);
   });
 
-  test("Landing page renders when app renders", async () => {
+  test("Landing page renders when the app renders", async () => {
     render(<App />);
     await screen.findByText(/The Weather of the World/i);
   });
