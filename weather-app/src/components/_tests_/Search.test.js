@@ -7,7 +7,7 @@ describe("Search Component Tests", () => {
     render(<Search />);
   });
 
-  test("When Search component is rendered, instructions are displayed to user", async () => {
+  test("When Search component is rendered, instructions are displayed to user", () => {
     render(<Search />);
 
     expect(screen.getByTestId(/search-instructions/i)).toBeInTheDocument();

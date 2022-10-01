@@ -18,9 +18,9 @@ const NextFewHours = (props) => {
 
   return (
     <HoursDiv data-testid="future-hours-weather-display">
-      {data.list.slice(0, 5).map((hour) => {
-        return <HourDetails key={hour.dt} hour={hour} />;
-      })}
+      {data.list.slice(0, 5).map((hour) => (
+        <HourDetails key={hour.dt} hour={hour} />
+      ))}
     </HoursDiv>
   );
 };

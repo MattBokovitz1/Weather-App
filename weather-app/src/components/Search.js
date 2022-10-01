@@ -30,7 +30,7 @@ export default function Search() {
       .then((response) => response.json())
 
       .then((request) => {
-        if (request.cod !== "404") {
+        if (request.cod === "200") {
           setNotFound(false);
           setData(request);
         } else {
@@ -47,7 +47,7 @@ export default function Search() {
     }
   };
 
-  const change = (event) => {
+  const onChange = (event) => {
     setCity(event.target.value);
   };
 
@@ -56,7 +56,7 @@ export default function Search() {
       <Input
         data-testid="search-input"
         placeholder="Enter City"
-        onChange={change}
+        onChange={onChange}
         value={city}
         onKeyDown={onKeyDown}
         style={{ width: 200 }}
