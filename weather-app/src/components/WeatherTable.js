@@ -15,13 +15,13 @@ const SearchInstructions = styled.h3`
 `;
 
 const WeatherTable = (props) => {
-  const { data } = props;
+  const { weatherData } = props;
   return (
     <div>
-      {data ? (
+      {weatherData ? (
         <WeatherCard>
-          <CurrentWeather data={data} />
-          <UpcomingWeather data={data} />
+          <CurrentWeather weatherData={weatherData} />
+          <UpcomingWeather weatherData={weatherData} />
         </WeatherCard>
       ) : (
         <SearchInstructions data-testid="search-instructions">

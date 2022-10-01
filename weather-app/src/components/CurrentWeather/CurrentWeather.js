@@ -11,12 +11,12 @@ const WeatherCard = styled.div`
   background: #a8a8ff;
 `;
 const CurrentWeather = (props) => {
-  const { data } = props;
+  const { weatherData } = props;
 
   return (
     <WeatherCard>
-      <CurrentDisplay data={data} />
-      <NextFewHours data={data} />
+      <CurrentDisplay weatherData={weatherData} />
+      <NextFewHours weatherData={weatherData} />
     </WeatherCard>
   );
 };

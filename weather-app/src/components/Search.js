@@ -19,7 +19,7 @@ const SearchInstructions = styled.h3`
 
 export default function Search() {
   const [city, setCity] = useState("");
-  const [data, setData] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
   const [notFound, setNotFound] = useState(false);
   const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -32,7 +32,7 @@ export default function Search() {
       .then((request) => {
         if (request.cod === "200") {
           setNotFound(false);
-          setData(request);
+          setWeatherData(request);
         } else {
           setNotFound(true);
         }
@@ -76,7 +76,7 @@ export default function Search() {
           Please search a valid city
         </SearchInstructions>
       ) : (
-        <WeatherTable data={data} />
+        <WeatherTable weatherData={weatherData} />
       )}
     </SearchWrapper>
   );

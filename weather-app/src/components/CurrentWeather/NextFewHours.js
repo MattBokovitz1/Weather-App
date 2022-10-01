@@ -14,11 +14,11 @@ const HoursDiv = styled.div`
 `;
 
 const NextFewHours = (props) => {
-  const { data } = props;
+  const { weatherData } = props;
 
   return (
     <HoursDiv data-testid="future-hours-weather-display">
-      {data.list.slice(0, 5).map((hour) => (
+      {weatherData.list.slice(0, 5).map((hour) => (
         <HourDetails key={hour.dt} hour={hour} />
       ))}
     </HoursDiv>
