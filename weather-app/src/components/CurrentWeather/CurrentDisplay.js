@@ -23,27 +23,29 @@ const DisplayDiv = styled.div`
 `;
 
 const CurrentDisplay = (props) => {
-  const { data } = props;
+  const { weatherData } = props;
 
   return (
     <DisplayDiv data-testid="weather-display">
-      <CityName>{data.city.name}</CityName>
+      <CityName>{weatherData.city.name}</CityName>
 
       <DescriptionIcon
-        src={`http://openweathermap.org/img/w/${data?.list[0].weather[0].icon}.png`}
+        src={`http://openweathermap.org/img/w/${weatherData?.list[0].weather[0].icon}.png`}
         alt="weather icon"
       />
       <WeatherDescription>
-        {data.list[0].weather[0].description}
+        {weatherData.list[0].weather[0].description}
       </WeatherDescription>
 
       <WeatherInfo>
-        Temperature: {Math.round(data.list[0].main.temp)} °F
+        Temperature: {Math.round(weatherData.list[0].main.temp)} °F
       </WeatherInfo>
       <WeatherInfo>
-        Feels like: {Math.round(data.list[0].main.feels_like)} °F
+        Feels like: {Math.round(weatherData.list[0].main.feels_like)} °F
       </WeatherInfo>
-      <WeatherInfo>Wind: {Math.round(data.list[0].wind.speed)} mph</WeatherInfo>
+      <WeatherInfo>
+        Wind: {Math.round(weatherData.list[0].wind.speed)} mph
+      </WeatherInfo>
     </DisplayDiv>
   );
 };

@@ -12,8 +12,8 @@ const DayDivs = styled.div`
 `;
 
 const UpcomingWeather = (props) => {
-  const { data } = props;
-  const dailyData = data.list.filter((info) =>
+  const { weatherData } = props;
+  const dailyData = weatherData.list.filter((info) =>
     info.dt_txt.includes("21:00:00")
   );
   return (
