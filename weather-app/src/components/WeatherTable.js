@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import CurrentWeather from "./CurrentWeather/CurrentWeather";
 import UpcomingWeather from "./DaysAheadWeather/UpcomingWeather";
+import MapRadar from "./MapRadar/MapRadar";
 
 const WeatherCard = styled.div`
   width: 100%;
@@ -22,6 +23,7 @@ const WeatherTable = (props) => {
         <WeatherCard>
           <CurrentWeather weatherData={weatherData} />
           <UpcomingWeather weatherData={weatherData} />
+          <MapRadar weatherData={weatherData} />
         </WeatherCard>
       ) : (
         <SearchInstructions data-testid="search-instructions">
